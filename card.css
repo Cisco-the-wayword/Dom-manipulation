@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0%;
+}
+
+.card {
+  border: black solid 2px;
+  height: 500px;
+  width: 650px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-top {
+  /* padding: 20%; */
+  flex-grow: 0.40;
+}
+
+.card-bottom {
+  display: flex;
+  flex-grow: 0.60;
+}
+
+.card-bottomLeft, .card-bottomRight {
+  flex-grow: 1;
+}
