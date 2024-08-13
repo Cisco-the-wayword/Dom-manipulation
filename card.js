@@ -1,63 +1,68 @@
-const parentDiv = document.createElement("div");
-parentDiv.classList.add("card");
-const childDiv1 = document.createElement("div");
-childDiv1.classList.add("card-top");
-const miniParent = document.createElement("div")
-miniParent.classList.add("card-bottom");
-const childDiv2 = document.createElement("div");
-childDiv2.classList.add("card-bottomLeft");
-const childDiv3 = document.createElement("div");
-childDiv3.classList.add("card-bottomRight");
-const join = document.createElement("h1");
-join.classList.add("header");
-join.textContent = "Join our community";
-const guarantee = document.createElement("p");
-guarantee.classList.add("guarantee");
-guarantee.textContent = "30-day, hassle-free money back guarantee";
-const someText = document.createElement("p");
-someText.classList.add("someText");
-someText.textContent = "Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who are serious about honing their skills.";
-const sub = document.createElement("h1");
-sub.classList.add("sub");
-sub.textContent = "Monthly subscription";
-const price = document.createElement("h1");
-price.classList.add("price");
-price.textContent = "$29";
-const perMonth = document.createElement("p");
-perMonth.textContent = "per month";
-const button = document.createElement("button");
-button.textContent = "Sign Up";
-button.classList.add("button");
-const whyUs = document.createElement("h1");
-whyUs.classList.add("header");
-whyUs.textContent = "Why Us";
-const whyUslist = document.createElement("ul");
-const whyUslist1 = document.createElement("li");
-whyUslist1.textContent = "Tutorials by industry experts";
-const whyUslist2 = document.createElement("li");
-whyUslist2.textContent = "Peer & expert code review";
-const whyUslist3 = document.createElement("li");
-whyUslist3.textContent = "Coding exercises";
-const whyUslist4 = document.createElement("li");
-whyUslist4.textContent = "Access to our GitHub repos";
-const whyUslist5 = document.createElement("li");
-whyUslist5.textContent = "Community forum";
-const whyUslist6 = document.createElement("li");
-whyUslist6.textContent = "Flashcard decks";
-const whyUslist7 = document.createElement("li");
-whyUslist7.textContent = "New videos every week";
+const createDiv = (className) => {
+  const div = document.createElement("div");
+  div.classList.add(className);
+  return div;
+};
 
-whyUslist.appendChild(whyUslist1);
-whyUslist.appendChild(whyUslist2);
-whyUslist.appendChild(whyUslist3);
-whyUslist.appendChild(whyUslist4);
-whyUslist.appendChild(whyUslist5);
-whyUslist.appendChild(whyUslist6);
-whyUslist.appendChild(whyUslist7);
+const createHeading = (className, text) => {
+  const heading = document.createElement("h1");
+  heading.classList.add(className);
+  heading.textContent = text;
+  return heading;
+};
 
-const button2 = document.createElement("button");
+const createParagraph = (className, text) => {
+  const paragraph = document.createElement("p");
+  paragraph.classList.add(className);
+  paragraph.textContent = text;
+  return paragraph;
+};
+
+const createList = (className, items) => {
+  const list = document.createElement("ul");
+  list.classList.add(className);
+
+  items.forEach((itemText) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = itemText;
+    list.appendChild(listItem);
+  });
+
+  return list;
+};
+
+const createButton = (className, text) => {
+  const button = document.createElement("button");
+  button.classList.add(className);
+  button.textContent = text;
+  return button;
+};
 
 document.addEventListener("DOMContentLoaded", function() {
+  const parentDiv = createDiv("card");
+  const childDiv1 = createDiv("card-top");
+  const miniParent = createDiv("card-bottom");
+  const childDiv2 = createDiv("card-bottomLeft");
+  const childDiv3 = createDiv("card-bottomRight");
+
+  const join = createHeading("header", "Join our community");
+  const guarantee = createParagraph("guarantee", "30-day, hassle-free money back guarantee");
+  const someText = createParagraph("someText", "Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who are serious about honing their skills.");
+  const sub = createHeading("sub", "Monthly subscription");
+  const price = createHeading("price", "$29");
+  const perMonth = createParagraph("", "per month");
+  const button = createButton("button", "Sign Up");
+  const whyUs = createHeading("header", "Why Us");
+  const whyUslist = createList("", [
+    "Tutorials by industry experts",
+    "Peer & expert code review",
+    "Coding exercises",
+    "Access to our GitHub repos",
+    "Community forum",
+    "Flashcard decks",
+    "New videos every week"
+  ]);
+
   parentDiv.appendChild(childDiv1);
   childDiv1.appendChild(join);
   childDiv1.appendChild(guarantee);
