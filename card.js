@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const button = createButton("button", "Sign Up");
   const whyUs = createHeading("header", "Why Us");
   const whyUslist = createList("", [
-    "Tutorials by industry experts",
+    "Tutorials by Cisco industry experts",
     "Peer & expert code review",
     "Coding exercises",
     "Access to our GitHub repos",
