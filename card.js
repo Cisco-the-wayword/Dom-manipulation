@@ -27,7 +27,6 @@ const createList = (className, items) => {
     listItem.textContent = itemText;
     list.appendChild(listItem);
   });
-
   return list;
 };
 
